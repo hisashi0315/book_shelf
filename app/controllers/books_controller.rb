@@ -31,14 +31,16 @@ class BooksController < ApplicationController
       redirect_to @book, notice: "書籍を更新しました。"
     else
       render :edit
+    end 
   end
 
-  　  def destory
-      @book = Book.dind(params[:id])
-      @book.destoryredirect_to book_path, notice:"書籍を削除しました"
-    end
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path, notice: "書籍を削除しました。"
+  end
 
-end
+
 
   private
 
