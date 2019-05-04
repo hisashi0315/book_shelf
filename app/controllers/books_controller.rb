@@ -14,12 +14,31 @@ class BooksController < ApplicationController
     else
       render :new
     end
-
   end
 
   def show
     @book = Book.find(params[:id])
   end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to @book, notice: "書籍を更新しました。"
+    else
+      render :edit
+  end
+
+  　  def destory
+      @book = Book.dind(params[:id])
+      @book.destoryredirect_to book_path, notice:"書籍を削除しました"
+    end
+
+end
 
   private
 
