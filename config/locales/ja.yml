@@ -12,9 +12,17 @@ ja:
         image: 画像
         category_id: カテゴリー
         category: カテゴリー
+      user:
+        email: メールアドレス
+        nick_name: ニックネーム
+        avatar: プロフィール画像
+        password: パスワード
+        password_confirmation: パスワード再入力
+        current_password: 現在のパスワード
+        remember_me: ログイン情報を記録する
     errors:
       messages:
-        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        record_invalid: "バリデーションに失敗しました: %{errors}"
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"

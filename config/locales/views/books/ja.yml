@@ -21,3 +21,11 @@ ja:
       price_yen: "¥%{price}"
     form:
       include_blank: カテゴリーを選択して下さい
+    user:
+      email: メールアドレス
+      nick_name: ニックネーム
+      avatar: プロフィール画像
+      password: パスワード
+    errors:
+        messages:
+          record_invalid: "バリデーションに失敗しました: %{errors}"

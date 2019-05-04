@@ -5,5 +5,9 @@
       <div><%= t(".price_yen", price: (number_with_delimiter book.price)) %></div>
       <p><%= truncate(book.description, length: 20) %></p>
     </div>
-  <% end %>
-  
+    <% end %>
+
+    <div class="col-12">
+    <%= paginate @books %> 
+    </div>
+

@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   def index
-    @books = Book.all
+    @books = Book.page(params[:page]).per(4)
   end
 
   def new
@@ -18,16 +18,13 @@ class BooksController < ApplicationController
   end
 
   def show
-  set_book
   end
 
   def edit
-  set_book
   end
 
 
   def update
-  set_book
     if @book.update(book_params)
       redirect_to @book, notice: "書籍を更新しました。"
     else
@@ -36,7 +33,6 @@ class BooksController < ApplicationController
   end
 
   def destroy
-  set_book
     @book.destroy
     redirect_to books_path, notice: "書籍を削除しました。"
   end
